@@ -34,8 +34,11 @@ Set goals achieved or not
 
 Libraries
 
-
-
+| **Libaries** | |
+| ---                 | ---       |
+| React Router        |   For displaying different components   |   
+| Awesome Fonts       |   For icons   |   
+| Axios               |  For API calls | 
 
 
 API Data
