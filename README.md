@@ -1,4 +1,7 @@
 # project_2
+
+![](https://media.giphy.com/media/10Xbg7GzmB5fna/giphy.gif)
+
 Readme  [https://docdro.id/xVG0Gw2]
 
 My Fitness Tracker
