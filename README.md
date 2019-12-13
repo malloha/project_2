@@ -1,4 +1,6 @@
 # project_2
+Readme  [https://docdro.id/xVG0Gw2]
+
 My Fitness Tracker
 
 Project Planning
@@ -37,7 +39,7 @@ API Data
 I will be using the Nutritionix API in the Calorie Intake functionality to get the Calorie count of items user logs. 
 
 
-REact Components
+React Components
 
 Component hierarchy
 
