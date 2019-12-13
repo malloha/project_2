@@ -34,7 +34,7 @@ Set goals achieved or not
 
 Libraries
 
-| **Libaries** | |
+| **Libraries** | |
 | ---                 | ---       |
 | React Router        |   For displaying different components   |   
 | Awesome Fonts       |   For icons   |   
@@ -43,6 +43,11 @@ Libraries
 
 API Data
 I will be using the Nutritionix API in the Calorie Intake functionality to get the Calorie count of items user logs. 
+
+| **API** | **Quality Docs** | **Website** | **Sample Query** |
+| ---     | ---       | ---       | ---       | 
+| Nutritionix API-        |   [https://docs.google.com/document/d/1_q-K-ObMTZvO0qUEAxROrN3bwMujwAN25sLHwJzliK0/edit#]  | [https://developer.nutritionix.com/]  | [https://trackapi.nutritionix.com/docs/#/default/post_v2_natural_nutrients]    |
+
 
 
 React Components
