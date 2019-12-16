@@ -1,10 +1,18 @@
-import React from 'react';
-import axios from 'axios';
+import React, { Component } from 'react';
 
-function CalorieIntake() {
-  return (
-    <h1>Calorie Intake</h1>
-  )
+
+class CalorieIntake extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      totalCalories: 0
+    }
+  }
+  render() {
+    return (
+      <h1>Calorie Intake</h1>
+
+    )
+  }
 }
-
 export default CalorieIntake;

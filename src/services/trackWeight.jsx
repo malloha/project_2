@@ -46,7 +46,7 @@ class TrackWeight extends Component {
         <h1>Weight</h1>
         <p>Log weight</p>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="weight" onChange={this.handleChange} placeholder="Log Your weight" />
+          <input type="number" name="weight" onChange={this.handleChange} placeholder="Log Your weight" />
           <input type="date" name="date" onChange={this.handleChange} placeholder="Date" />
           <input type="submit" value="Log weight" />
         </form>
