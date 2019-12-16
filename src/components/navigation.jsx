@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CalorieIntake from '../services/calorieIntake'
 import WaterIntake from '../services/waterIntake'
-import Weight from '../services/weight'
+import TrackWeight from '../services/trackWeight'
 import PhysicalActivity from '../services/physicalActivity'
 
 class Navigation extends Component {
@@ -18,7 +18,7 @@ class Navigation extends Component {
         <p> Welcome to MyFitnessTracker</p>
         <CalorieIntake />
         <WaterIntake />
-        <Weight />
+        <TrackWeight />
         <PhysicalActivity />
       </div>
     )
