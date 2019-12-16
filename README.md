@@ -1,93 +1,68 @@
-# project_2
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![](https://media.giphy.com/media/10Xbg7GzmB5fna/giphy.gif)
+## Available Scripts
 
-Readme  [https://docdro.id/xVG0Gw2]
+In the project directory, you can run:
 
-My Fitness Tracker
+### `npm start`
 
-Project Planning
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Overview
-My Fitness Tracker is an App that enables you to track your daily physically activity and nutritional intake by giving you an option to log your Calorie Intake, Water Intake, Weight Tracker and Physical Activity.
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-WireFrames:
-!(This is my wireframe)[https://docdro.id/KckCDN8]
+### `npm test`
 
-MVP
-Goals
-MVP is to have the following functionalities 
-LogIn Functionality 
-Calorie Intake
-Log food Items and use api to get calorie count
-Calorie calculator
-Set Calorie Goal
-Water Intake
-Log number of glasses per day 
-Set goals- Achieved or not
-Weight Tracker
-Input weight Daily and represent it graphically
-Physical Activity[
-Log number of Steps 
-Calories burnt in the gym 
-Set goals achieved or not
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Libraries
+### `npm run build`
 
-| **Libraries** | |
-| ---                 | ---       |
-| React Router        |   For displaying different components   |   
-| Awesome Fonts       |   For icons   |   
-| Axios               |  For API calls | 
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-API Data
-I will be using the Nutritionix API in the Calorie Intake functionality to get the Calorie count of items user logs. 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-| **API** | **Quality Docs** | **Website** | **Sample Query** |
-| ---     | ---       | ---       | ---       | 
-| Nutritionix API-        |   [https://docs.google.com/document/d/1_q-K-ObMTZvO0qUEAxROrN3bwMujwAN25sLHwJzliK0/edit#]  | [https://developer.nutritionix.com/]  | [https://trackapi.nutritionix.com/docs/#/default/post_v2_natural_nutrients]    |
+### `npm run eject`
 
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-React Components
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-Component hierarchy
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-Src 
-|_assets
-	|_Wireframes
-|_ components
-	|_ Header.jsx
-	|_ Footer.jsx
-	|_ App.js(homepage)
-	|_ LoginPage.jsx
-	|_ CalorieIntake.jsx
-	|_ WaterIntake.jsx
-	|_ Weight.jsxs
-	|_ PhysicalActivity.jsx
+## Learn More
 
-COMPONENT BREAKDOWN
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+To learn React, check out the [React documentation](https://reactjs.org/).
 
+### Code Splitting
 
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
+### Analyzing the Bundle Size
 
-COMPONENT ESTIMATES
+zThis section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
+### Making a Progressive Web App
 
-Post-MVP
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
+### Advanced Configuration
 
-Post-MVP Goals
-Add User Account
-Find Recipes [use API to search healthy recipes and add them to ur app]
-Find Workouts[use API to find work outs and add them to favorite]
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-Post-MVP Data
-Use the following Recipe API
-https://developer.edamam.com/edamam-recipe-api
+### Deployment
 
-Find a Workouts API
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
+### `npm run build` fails to minify
 
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
