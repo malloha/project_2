@@ -38,7 +38,7 @@ class PhyscialActivity extends Component {
 
   render() {
     return (
-      <div>
+      <div className="physical-activity-wrapper wrapper">
         <h1> Physical Activity</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="number" name="steps" onChange={this.handleChange} placeholder="Enter Steps" />

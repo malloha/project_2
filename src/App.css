@@ -6,8 +6,33 @@
   align-content: space-between;
   font-family: 'Poppins', sans-serif;
 
+}
 
+.wrapper{
+  border: 1px solid black;
 }
-.App > * {
-  flex: 1 100%;
+.Nav{
+  display:flex;
+  flex-direction: column;
+ justify-content: space-evenly;
 }
+
+.links{
+  display:flex;
+ justify-content: space-evenly;
+ align-content: center;
+ align-items: center;
+ text-align: center;
+}
+
+a{
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display:flex;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+ }

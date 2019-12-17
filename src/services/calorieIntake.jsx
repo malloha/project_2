@@ -7,9 +7,10 @@ class CalorieIntake extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      input: 'apple',
+      input: '',
       totalCalories: 0,
-      apiDataLoaded: false
+      apiDataLoaded: false,
+      foods: []
     }
   }
   handleSubmit = (input) => {
@@ -19,15 +20,28 @@ class CalorieIntake extends Component {
     axios.get(`https://api.edamam.com/api/food-database/parser?ingr=${input}&app_id=${apiId}&app_key=${apiKey}`)
       .then((resp) => {
         console.log(resp)
-        this.setState({
-          totalCalories: resp.data.parsed[0].food.nutrients.ENERC_KCAL,
-          apiDataLoaded: true,
-        })
+        if (resp.data.parsed.length > 0) {
+          const foodConsumed = {
+            calories: resp.data.parsed[0].food.nutrients.ENERC_KCAL,
+            foodEaten: input
+          }
+          const updatedTotalCalories = this.state.totalCalories + foodConsumed.calories
+          this.setState(prevState => ({
+            totalCalories: updatedTotalCalories,
+            apiDataLoaded: true,
+            foods: [...prevState.foods, foodConsumed]
+          }))
+        }
+        else {
+          console.log('error')
+        }
+
       })
+
       .catch((err) => console.log(err))
   }
 
-  //resp.data.parsed[0].food.nutrients.ENerC_KCAL
+
   handleChange = (e) => {
     this.setState({
       input: e.target.value
@@ -35,7 +49,7 @@ class CalorieIntake extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="calorie-intake-wrapper wrapper">
         <h1>Calorie Intake</h1>
         <div className="search-container">
           <form
@@ -47,9 +61,9 @@ class CalorieIntake extends Component {
             <input
               type="text"
               className="search-input"
-              name="search"
+              name="food"
               onChange={this.handleChange}
-              placeholder="Search"
+              placeholder="Search Food"
             ></input>
 
             <FaSearch
@@ -59,7 +73,17 @@ class CalorieIntake extends Component {
               }}
             />
           </form>
-          {this.state.apiDataLoaded && <div>Calories in {this.state.input} : {this.state.totalCalories}</div>}
+          {this.state.apiDataLoaded &&
+
+            <div>
+              {this.state.foods.map((food, key) =>
+                <div key={key}>
+                  <p>calories: {food.calories} kcal</p>
+                  <p>food: {food.foodEaten} kcal</p>
+                </div>)}
+              <h3>Total Calories Consumed: {this.state.totalCalories} kcal</h3>
+            </div>
+          }
         </div>
       </div >
     )

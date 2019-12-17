@@ -27,7 +27,7 @@ class WaterIntake extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="water-intake-wrapper wrapper">
         <h1> Water</h1>
         <p>Number of glasses :{this.state.water}</p>
         <FaPlusCircle

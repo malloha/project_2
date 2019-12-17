@@ -42,7 +42,7 @@ class TrackWeight extends Component {
 
   render() {
     return (
-      <div>
+      <div className="track-weight-wrapper wrapper">
         <h1>Weight</h1>
         <p>Log weight</p>
         <form onSubmit={this.handleSubmit}>

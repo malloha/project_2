@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import CalorieIntake from '../services/calorieIntake'
-import WaterIntake from '../services/waterIntake'
-import TrackWeight from '../services/trackWeight'
-import PhysicalActivity from '../services/physicalActivity'
+
+import { Link } from 'react-router-dom'
 
 class Navigation extends Component {
   constructor(props) {
@@ -16,10 +14,12 @@ class Navigation extends Component {
     return (
       <div className="Nav">
         <p> Welcome to MyFitnessTracker</p>
-        <CalorieIntake />
-        <WaterIntake />
-        <TrackWeight />
-        <PhysicalActivity />
+        <div className="links">
+          <Link to="/weight">Track Weight</Link>
+          <Link to="/water">Track Water</Link>
+          <Link to="/activity">Track Physical Activity</Link>
+          <Link to="/calorie">Track Calories</Link>
+        </div>
       </div>
     )
   }
