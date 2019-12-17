@@ -38,16 +38,16 @@ class PhyscialActivity extends Component {
 
   render() {
     return (
-      <div className="physical-activity-wrapper wrapper">
-        <h1> Physical Activity</h1>
-        <form onSubmit={this.handleSubmit}>
+      <div className="physical-activity wrapper">
+        <h1> Physical Activity Tracker</h1>
+        <form onSubmit={this.handleSubmit} className="form">
           <input type="number" name="steps" onChange={this.handleChange} placeholder="Enter Steps" />
           <input type="number" name="distance" onChange={this.handleChange} placeholder="Distance Walked" />
           <input type="submit" value="Add Physical Activity" />
         </form>
         {this.state.activityLogged &&
           this.state.activities.map((activity, key) =>
-            <div key={key}>
+            <div className="entry" key={key}>
               <p>Steps: {activity.steps}</p>
               <p>Distance Walked: {activity.distance}</p>
             </div>)

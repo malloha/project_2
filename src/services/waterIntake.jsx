@@ -27,9 +27,9 @@ class WaterIntake extends Component {
   }
   render() {
     return (
-      <div className="water-intake-wrapper wrapper">
-        <h1> Water</h1>
-        <p>Number of glasses :{this.state.water}</p>
+      <div className="water-intake wrapper">
+        <h1> Water Intake Log</h1>
+        <p className="entry">Number of glasses :{this.state.water}</p>
         <FaPlusCircle
           className="font-awesome-icon"
           onClick={e => {
@@ -45,7 +45,7 @@ class WaterIntake extends Component {
             this.subtractGlasses();
           }}
         />
-      </div>
+      </div >
     )
   }
 }

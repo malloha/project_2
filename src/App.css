@@ -1,20 +1,61 @@
+body,html {
+  position:relative;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 .App {
+  position: absolute;
+  padding-top: 100px;
+  padding-bottom: 100px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-content: space-between;
+  align-items: center;
   font-family: 'Poppins', sans-serif;
-
+  background-color: #181818;
+  color:white;
+  width: 100%;
+  height: 100%;
+  
 }
 
+.header{  position: absolute; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  background-color: #000000;
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  font-size: 30px;
+  text-decoration: none;
+
+  top: 0;
+  width: 100%;
+}
+.header:hover{
+  color: white;
+  /* transform: scale(1.5); */
+}
+.footer{
+  background-color: #000000;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%; 
+}
 .wrapper{
   border: 1px solid black;
 }
 .Nav{
   display:flex;
   flex-direction: column;
- justify-content: space-evenly;
+ justify-content: stretch;
+ height: 100%
 }
 
 .links{
@@ -23,16 +64,118 @@
  align-content: center;
  align-items: center;
  text-align: center;
+ 
 }
 
-a{
-  height: 200px;
-  width: 200px;
+.links a{
+  height: 250px;
+  width: 250px;
+  font-size: 30px;
   border: 1px solid black;
   border-radius: 50%;
   display:flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   align-content: center;
   align-items: center;
   text-align: center;
+  color:white;
  }
+
+ @media only screen and (max-width: 400px){
+  .links{
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+.links a{
+  height: 150px;
+  width: 150px;
+  font-size: 18px;
+  margin: 5px;
+}
+.Nav{
+  align-content: flex-start;
+}
+
+
+
+ }
+ a:hover{
+   color: #181818;
+ }
+ 
+ main{
+   height: 100%;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+ }
+ main>.Nav{
+  align-items: center;
+ }
+ .icon{
+font-size: 50px;
+ }
+ .track-weight
+ {background-color:#2CCCC3
+  ;}
+ .water-intake
+  {background-color: #FACD3D;}
+
+ .physical-activity
+  {background-color: #5626C4;}
+  
+  .FaSearch{
+    font-size: 20px;
+    margin: 10px;
+    transition: transform 1s ease-in-out;
+  }
+
+  .FaSearch:hover{
+   color: black;
+   cursor: pointer;
+   transform: scale(1.5);
+
+ }
+
+ .calorie-intake{ 
+   background-color: #E60576
+
+   ;
+  }
+
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    margin: 5px;
+  }
+
+input{
+  margin: 10px;
+}
+
+form{
+  display: flex;
+  flex-wrap: wrap;
+}
+input[type=text]{
+  height: 20px;
+}
+
+.entry{
+  border: 1px solid white;
+  width: 90%;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 5px 5px rgba(255, 255, 255,0.2);
+ 
+  
+}

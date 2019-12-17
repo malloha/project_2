@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-
+import { FaWeight } from "react-icons/fa";
 import { Link } from 'react-router-dom'
+import { GiFruitBowl } from "react-icons/gi";
+import { GiWaterBottle } from "react-icons/gi";
+import { FaRunning } from "react-icons/fa";
+
 
 class Navigation extends Component {
   constructor(props) {
@@ -13,12 +17,12 @@ class Navigation extends Component {
   render() {
     return (
       <div className="Nav">
-        <p> Welcome to MyFitnessTracker</p>
+        <h1> Welcome to MyFitnessTracker</h1>
         <div className="links">
-          <Link to="/weight">Track Weight</Link>
-          <Link to="/water">Track Water</Link>
-          <Link to="/activity">Track Physical Activity</Link>
-          <Link to="/calorie">Track Calories</Link>
+          <Link to="/weight" className="track-weight"><FaWeight className="icon" />Track Weight</Link>
+          <Link to="/water" className="water-intake"><GiWaterBottle className=" icon" />Track Water Intake</Link>
+          <Link to="/activity" className="physical-activity"><FaRunning className=" icon" />Track Physical Activity</Link>
+          <Link to="/calorie" className="calorie-intake"><GiFruitBowl className=" icon" />Track Calorie Intake</Link>
         </div>
       </div>
     )

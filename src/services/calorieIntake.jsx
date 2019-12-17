@@ -49,8 +49,8 @@ class CalorieIntake extends Component {
   }
   render() {
     return (
-      <div className="calorie-intake-wrapper wrapper">
-        <h1>Calorie Intake</h1>
+      <div className="calorie-intake wrapper">
+        <h1>Calorie Intake Log</h1>
         <div className="search-container">
           <form
             onSubmit={(e) => {
@@ -66,7 +66,7 @@ class CalorieIntake extends Component {
               placeholder="Search Food"
             ></input>
 
-            <FaSearch
+            <FaSearch className="FaSearch"
               onClick={async e => {
                 e.preventDefault();
                 await this.handleSubmit(this.state.input);
@@ -77,7 +77,7 @@ class CalorieIntake extends Component {
 
             <div>
               {this.state.foods.map((food, key) =>
-                <div key={key}>
+                <div className="entry" key={key}>
                   <p>calories: {food.calories} kcal</p>
                   <p>food: {food.foodEaten} kcal</p>
                 </div>)}
