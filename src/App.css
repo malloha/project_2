@@ -211,11 +211,15 @@ input{
 }
 
 .logout-button{
-  background-color: #5626C4;
-  color: white;
+  color: #5626C4;
   font-size: 15px;
-  padding: 1%;
-  margin-left: 5%;
+position: fixed;
+right: 5%;
+top: 5%;
+
+}
+.logout-button:hover{
+  color:white;
 }
 
 .entry{
