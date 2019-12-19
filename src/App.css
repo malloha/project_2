@@ -155,15 +155,6 @@ font-size: 50px;
   /* box-shadow: 0px 0px 10px 10px #2CCCC3; */
 }
 
-.track-weight .button{
-  background-color:#2CCCC3;
-}
-
- .water-intake
-  {background-color: #FACD3D;
-    /* box-shadow: 0px 0px 10px 10px #FACD3D; */
-  }
-    
 
  .physical-activity
   {background-color: #5626C4;
@@ -221,7 +212,7 @@ input{
 }
 
 .button{
-  background-color: #FACD3D;
+  background-color: #181818;
   color: white;
   padding: 2% 5%;
   font-size: 0.8em;
@@ -265,3 +256,11 @@ h1 {
 h1:hover {
   letter-spacing: 7px;
    }
+
+ .water-intake
+ {background-color: #FACD3D;
+   display: flex;
+   flex-direction: row;
+   /* box-shadow: 0px 0px 10px 10px #FACD3D; */
+ }
+   
