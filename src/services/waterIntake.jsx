@@ -6,7 +6,8 @@ class WaterIntake extends Component {
     super(props)
     this.state = {
       water: 0,
-      target: 0
+      goal: 0,
+      goalLogged: false
     }
   }
   addGlasses = (e) => {
@@ -25,10 +26,39 @@ class WaterIntake extends Component {
       })
     }
   }
+  handlegoal = (e) => {
+
+    this.setState({
+      goal: e.target.value
+    })
+
+  }
+  submitGoal = (e) => {
+    this.setState({
+
+      goalLogged: true
+
+    })
+  }
+
   render() {
     return (
       <div className="water-intake wrapper">
         <h1> Water Intake Log</h1>
+
+        <div>
+
+          <h2>#WaterIntakeGoals</h2>
+
+          {!this.state.goalLogged &&
+            <div>
+              <input type="number" name="goal" onChange={this.handlegoal}></input>
+              <button className="button" onClick={this.submitGoal}> Set Goals</button>
+            </div>
+          }
+          {this.state.goalLogged && <p>Today's Goal : {this.state.goal} glasses of water</p>}
+        </div>
+
         <div>
           <p className="entry">Number of glasses :{this.state.water}</p>
           <FaPlusCircle
