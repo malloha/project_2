@@ -10,7 +10,7 @@ function Navigation(props) {
 
   return (
     <div className="Nav">
-      <h1> Welcome to MyFitnessTracker {props.username}</h1>
+      <h1> Welcome to MyFitnessTracker<span3> {props.username}</span3></h1>
       <div className="links">
         <Link to="/weight" className="track-weight"><FaWeight className="icon" />Track Weight</Link>
         <Link to="/water" className="water-intake"><GiWaterBottle className=" icon" />Track Water Intake</Link>

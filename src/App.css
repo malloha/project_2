@@ -20,8 +20,19 @@ padding: 10%;
   display: flex;
 align-items: center;
 }
+.font-awesome-icon{
+  color: #5626C4;
+}
+span1{
+  color: #2CCCC3;
+}
+span2{
+  color: #FACD3D;
+}
 
-
+span3{
+  color: #E60576
+}
 .App {
   position: absolute;
   padding-top: 100px;
@@ -86,10 +97,6 @@ align-items: center;
  text-align: center;
 }
 
-p{
-  margin-left: 15px;
-  margin-right: 15px;
-}
 
 .links a{
   height: 250px;
@@ -128,6 +135,9 @@ p{
  a:hover{
    color: black;
   
+ }
+ p{
+   margin: 0px;
  }
  
  main{
@@ -238,12 +248,13 @@ top: 5%;
 .entry{
   border: 1px solid white;
   width: 100%;
-  margin: 10px;
+  margin: 5px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   box-shadow: 5px 5px rgba(255, 255, 255,0.2);
-  
+  padding: 0;
 }
 
 span{
