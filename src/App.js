@@ -3,7 +3,7 @@ import Header from './components/header'
 import Footer from './components/footer'
 import Navigation from './components/navigation'
 import Login from './components/login'
-import { Link, Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import WaterIntake from './services/waterIntake'
 import TrackWeight from './services/trackWeight'
 import CalorieIntake from './services/calorieIntake'
@@ -14,27 +14,40 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
-
       username: '',
       password: '',
       email: '',
-      isLoggedIn: false
-
+      isLoggedOut: true,
+      user: {
+        username: 'maleeha',
+        password: '123',
+        email: 'm@m.com'
+      }
     }
   }
-
-
-
   onSubmit = (e) => {
     e.preventDefault();
-    this.setState({
-      password: this.state.password,
-      username: this.state.username,
-      email: this.state.email,
-      isLoggedIn: true
-    })
+    const username = this.state.username
+    const email = this.state.email;
+    const password = this.state.password;
+    if (password === this.state.user.password && username === this.state.user.username && email === this.state.user.email) {
+      this.setState({
+        user: {
+          email: email,
+          username: username,
+          password: password
+        },
+        isLoggedOut: false
+      })
+      console.log('this is the onsubmit', this.state)
+      this.props.history.push('/home')
+    }
+    else {
+      this.setState({
+        loginError: "Please fillout all fields"
+      })
+    }
   }
 
 
@@ -49,7 +62,7 @@ class App extends Component {
   logoutClick = (e) => {
     e.preventDefault();
     this.setState({
-      isLoggedIn: false,
+      isLoggedOut: true,
       username: "",
       password: "",
       email: ""
@@ -61,14 +74,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          {/* 
-          {this.state.isLoggedIn && <p>Welcome {this.state.username}! How was your Day? </p>} */}
 
           <Route
             exact
-            path="/"
+            path="/home"
             render={() => (
               <Navigation
+
               />
             )}
           />
@@ -97,9 +109,14 @@ class App extends Component {
             )}
           />
           <Route
-            path="/login"
+            exact path="/"
             render={() => (
-              <Login />
+              <Login onSubmit={this.onSubmit}
+                onChange={this.onChange}
+                isLoggedOut={this.state.isLoggedOut}
+                logoutClick={this.logoutClick}
+                loginError={this.state.loginError}
+              />
             )}
           />
         </main>
@@ -109,4 +126,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

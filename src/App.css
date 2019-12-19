@@ -1,6 +1,6 @@
 body,html {
   position:relative;
-  height: 100%;
+  height: 85%;
   padding: 0;
   margin: 0;
 }
@@ -33,7 +33,6 @@ body,html {
   font-family: 'Fredoka One', cursive;
   font-size: 30px;
   text-decoration: none;
-
   top: 0;
   width: 100%;
 }
@@ -55,7 +54,7 @@ body,html {
   display:flex;
   flex-direction: column;
  justify-content: stretch;
- height: 100%
+/* height: 100% */
 }
 
 .links{
@@ -98,12 +97,10 @@ body,html {
 .Nav{
   align-content: flex-start;
 }
-
-
-
  }
  a:hover{
-   color: #181818;
+   color: white;
+   opacity: 0.9;
  }
  
  main{
@@ -119,14 +116,20 @@ body,html {
 font-size: 50px;
  }
  .track-weight
- {background-color:#2CCCC3
-  ;}
+ {background-color:#2CCCC3;
+  
+}
  .water-intake
   {background-color: #FACD3D;}
 
  .physical-activity
   {background-color: #5626C4;}
-  
+
+ .calorie-intake{ 
+   background-color: #E60576;
+
+  }
+    
   .FaSearch{
     font-size: 20px;
     margin: 10px;
@@ -140,11 +143,7 @@ font-size: 50px;
 
  }
 
- .calorie-intake{ 
-   background-color: #E60576
 
-   ;
-  }
 
   .wrapper{
     display: flex;
@@ -179,3 +178,10 @@ input[type=text]{
  
   
 }
+
+
+h1 {
+  transition: 1s;
+}
+h1:hover {
+  letter-spacing: 7px; }
