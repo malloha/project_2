@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Confetti from 'react-confetti'
 
 class TrackWeight extends Component {
   constructor(props) {
@@ -6,7 +7,11 @@ class TrackWeight extends Component {
     this.state = {
       weightHistory: [],
       weightArray: [],
-      weightLogged: false
+      weightLogged: false,
+      goal: 1000,
+      goalLogged: false,
+      currentWeight: 1000
+
     }
 
   }
@@ -21,9 +26,15 @@ class TrackWeight extends Component {
         [name]: value
       },
 
-    }))
 
-    console.log(this.state)
+
+    }))
+    // if (e.target.name === "weight") {
+    //   this.setState({
+    //     currentWeight: e.target.value
+    //   })
+    // }
+    // console.log(this.state)
   }
 
   handleSubmit = (e) => {
@@ -38,12 +49,43 @@ class TrackWeight extends Component {
 
     console.log(this.state.weightArray)
   }
+  handlegoal = (e) => {
 
+    this.setState({
+      goal: e.target.value
+    })
+
+  }
+  submitGoal = (e) => {
+    this.setState({
+
+      goalLogged: true
+
+
+    })
+  }
 
   render() {
     return (
       <div className="track-weight wrapper">
         <h1>Weight Tracker</h1>
+
+        <div>
+          {this.state.goalLogged && this.state.weightLogged &&
+            this.state.goal <= this.state.weightArray[this.state.weightArray.length - 1].weight ? <h2>Congratulations! Today's Goal Achieved!</h2> : console.log()}
+          <h2>#WaterIntakeGoals</h2>
+
+          {!this.state.goalLogged &&
+            <div>
+              <input type="number" name="goal" onChange={this.handlegoal}></input>
+              <button className="track-button" onClick={this.submitGoal}> Set Goals</button>
+            </div>
+          }
+          {this.state.goalLogged && <p>Today's Goal : {this.state.goal} glasses of water</p>}
+        </div>
+
+
+
         <p>Log weight in lbs</p>
         <form onSubmit={this.handleSubmit}>
           <input type="number" name="weight" onChange={this.handleChange} placeholder="Log Your weight" />
@@ -52,11 +94,31 @@ class TrackWeight extends Component {
         </form>
         {this.state.weightLogged &&
           this.state.weightArray.map((entry, key) =>
-            <div className="entry" key={key}> 
+            <div className="entry" key={key}>
               <p>Weight: <span>{entry.weight} lbs</span></p>
               <p>Date: <span>{entry.date}</span></p>
             </div>)
         }
+        {this.state.goalLogged && this.state.weightLogged &&
+          this.state.goal <= this.state.weightArray[this.state.weightArray.length - 1].weight
+          ?
+          // console.log(this.state.weightArray[this.state.weightArray.length - 1].weight, 'working')
+          < Confetti
+            drawShape={ctx => {
+              ctx.beginPath()
+              for (let i = 0; i < 22; i++) {
+                const angle = 0.35 * i
+                const x = (0.2 + (1.5 * angle)) * Math.cos(angle)
+                const y = (0.2 + (1.5 * angle)) * Math.sin(angle)
+                ctx.lineTo(x, y)
+              }
+              ctx.stroke()
+              ctx.closePath()
+            }}
+          />
+          : console.log('hi')
+        }
+
       </div >
     )
 
