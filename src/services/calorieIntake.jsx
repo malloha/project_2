@@ -78,8 +78,9 @@ class CalorieIntake extends Component {
             <div>
               {this.state.foods.map((food, key) =>
                 <div className="entry" key={key}>
-                  <p>calories: {food.calories} kcal</p>
-                  <p>food: {food.foodEaten} kcal</p>
+                  <p>Food Consumed: <span>{food.foodEaten}</span></p>
+                  <p>Calories Consumed:<span> {food.calories} kcal</span></p>
+
                 </div>)}
               <h3>Total Calories Consumed: {this.state.totalCalories} kcal</h3>
             </div>

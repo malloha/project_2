@@ -44,17 +44,17 @@ class TrackWeight extends Component {
     return (
       <div className="track-weight wrapper">
         <h1>Weight Tracker</h1>
-        <p>Log weight</p>
+        <p>Log weight in lbs</p>
         <form onSubmit={this.handleSubmit}>
           <input type="number" name="weight" onChange={this.handleChange} placeholder="Log Your weight" />
           <input type="date" name="date" onChange={this.handleChange} placeholder="Date" />
-          <input type="submit" value="Log weight" />
+          <input type="submit" value="Log weight" className="button" />
         </form>
         {this.state.weightLogged &&
           this.state.weightArray.map((entry, key) =>
-            <div className="entry" key={key}>
-              <p>Weight: {entry.weight}</p>
-              <p>Date: {entry.date}</p>
+            <div className="entry" key={key}> 
+              <p>Weight: <span>{entry.weight} lbs</span></p>
+              <p>Date: <span>{entry.date}</span></p>
             </div>)
         }
       </div >

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
-import Navigation from '../components/navigation'
 
 function Login(props) {
   return (
@@ -13,7 +12,7 @@ function Login(props) {
 
           <input type="text" placeholder="Enter Username" name="username" onChange={props.onChange} />
           <input type="password" placeholder="Enter Password" name="password" onChange={props.onChange} />
-          <Link to="/home" onClick={props.onSubmit} >Log In</Link>
+          <Link to="/home" className="button" onClick={props.onSubmit} >Log In</Link>
         </form> :
         <Redirect to="/home" />
       }

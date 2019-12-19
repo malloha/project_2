@@ -67,12 +67,16 @@ class App extends Component {
       password: "",
 
     })
+    console.log('heres')
+    this.props.history.push('/')
   }
 
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header
+          isLoggedOut={this.state.isLoggedOut}
+          logoutClick={this.logoutClick} />
         <main>
 
           <Route

@@ -42,14 +42,14 @@ class PhyscialActivity extends Component {
         <h1> Physical Activity Tracker</h1>
         <form onSubmit={this.handleSubmit} className="form">
           <input type="number" name="steps" onChange={this.handleChange} placeholder="Enter Steps" />
-          <input type="number" name="distance" onChange={this.handleChange} placeholder="Distance Walked" />
-          <input type="submit" value="Add Physical Activity" />
+          {/* <input type="number" name="distance" onChange={this.handleChange} placeholder="Distance Walked" /> */}
+          <input type="submit" value="Add Physical Activity" className="button" />
         </form>
         {this.state.activityLogged &&
           this.state.activities.map((activity, key) =>
             <div className="entry" key={key}>
-              <p>Steps: {activity.steps}</p>
-              <p>Distance Walked: {activity.distance}</p>
+              <p>Steps: <span>{activity.steps}</span></p>
+              <p>Distance Walked: <span>{activity.steps / 2000} miles</span></p>
             </div>)
         }
       </div>
