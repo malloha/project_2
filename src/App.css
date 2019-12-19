@@ -116,7 +116,7 @@ span3{
     */
  }
 
- @media only screen and (max-width: 400px){
+ @media only screen and (max-width: 770px){
   .links{
     flex-wrap: wrap;
     align-content: flex-start;
@@ -229,6 +229,14 @@ position: fixed;
 right: 5%;
 top: 5%;
 
+}
+
+.back-button{
+  color: #5626C4;
+  font-size: 15px;
+position: fixed;
+left: 20%;
+top: 5%;
 }
 .logout-button:hover{
   color:white;
