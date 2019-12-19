@@ -1,20 +1,21 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import Navigation from '../components/navigation'
 
 function Login(props) {
   return (
-    <div>
+    <div className="loginPage">
       {props.isLoggedOut ?
 
-        <form onSubmit={props.onSubmit}>
+        <form onSubmit={props.onSubmit} className="loginForm">
+          <p>Welcome to MyFitnessTracker! Enter username and password to continue. </p>
           <h3 style={{ 'color': 'red' }}>{props.loginError}</h3>
-          <input type="email" placeholder="Enter Email" name="email" onChange={props.onChange} />
+
           <input type="text" placeholder="Enter Username" name="username" onChange={props.onChange} />
           <input type="password" placeholder="Enter Password" name="password" onChange={props.onChange} />
-          <Link to="/home" onClick={props.onSubmit} >on click</Link>
+          <Link to="/home" onClick={props.onSubmit} >Log In</Link>
         </form> :
-        <Navigation />
+        <Redirect to="/home" />
       }
     </div >
   )

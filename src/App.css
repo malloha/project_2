@@ -5,6 +5,22 @@ body,html {
   margin: 0;
 }
 
+.loginForm{
+  border: 1px solid #5626C4;
+  background: rgb(86, 38, 196,.2);
+  box-shadow: 0px 0px 120px 10px #0ff;
+  box-shadow: 0px 0px 220px 20px #5626C4;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 10%;
+}
+.loginPage{
+  display: flex;
+align-items: center;
+}
+
+
 .App {
   position: absolute;
   padding-top: 100px;
@@ -31,13 +47,15 @@ body,html {
   background-color: #000000;
   color: white;
   font-family: 'Fredoka One', cursive;
-  font-size: 30px;
+  font-size: 1.5em;
   text-decoration: none;
   top: 0;
   width: 100%;
+  
 }
 .header:hover{
   color: white;
+ 
   /* transform: scale(1.5); */
 }
 .footer{
@@ -55,6 +73,7 @@ body,html {
   flex-direction: column;
  justify-content: stretch;
 /* height: 100% */
+
 }
 
 .links{
@@ -63,6 +82,8 @@ body,html {
  align-content: center;
  align-items: center;
  text-align: center;
+  
+
  
 }
 
@@ -70,7 +91,7 @@ body,html {
   height: 250px;
   width: 250px;
   font-size: 30px;
-  border: 1px solid black;
+  border: 1px solid rgb(38, 56, 196);
   border-radius: 50%;
   display:flex;
   flex-direction: column;
@@ -80,6 +101,10 @@ body,html {
   align-items: center;
   text-align: center;
   color:white;
+  margin: 10px;
+  box-shadow: 0px 0px 120px 10px #0ff;
+  box-shadow: 0px 0px 220px 20px rgb(38, 56, 196);
+   
  }
 
  @media only screen and (max-width: 400px){
@@ -99,8 +124,8 @@ body,html {
 }
  }
  a:hover{
-   color: white;
-   opacity: 0.9;
+   color: black;
+  
  }
  
  main{
@@ -156,16 +181,19 @@ font-size: 50px;
   }
 
 input{
-  margin: 10px;
+  margin: 5px;
+  height: 3em;
+  width: 200px;
+
 }
 
-form{
-  display: flex;
-  flex-wrap: wrap;
+.loginPage a{
+  background-color: #5626C4;
+  color: white;
+  padding: 2% 5%;
+  font-size: 0.8em;
 }
-input[type=text]{
-  height: 20px;
-}
+
 
 .entry{
   border: 1px solid white;
@@ -182,6 +210,8 @@ input[type=text]{
 
 h1 {
   transition: 1s;
+ 
 }
 h1:hover {
-  letter-spacing: 7px; }
+  letter-spacing: 7px;
+   }

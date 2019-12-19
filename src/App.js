@@ -17,24 +17,24 @@ class App extends Component {
     this.state = {
       username: '',
       password: '',
-      email: '',
+
       isLoggedOut: true,
       user: {
         username: 'maleeha',
         password: '123',
-        email: 'm@m.com'
+
       }
     }
   }
   onSubmit = (e) => {
     e.preventDefault();
     const username = this.state.username
-    const email = this.state.email;
+
     const password = this.state.password;
-    if (password === this.state.user.password && username === this.state.user.username && email === this.state.user.email) {
+    if (password === this.state.user.password && username === this.state.user.username) {
       this.setState({
         user: {
-          email: email,
+
           username: username,
           password: password
         },
@@ -65,7 +65,7 @@ class App extends Component {
       isLoggedOut: true,
       username: "",
       password: "",
-      email: ""
+
     })
   }
 
@@ -80,7 +80,7 @@ class App extends Component {
             path="/home"
             render={() => (
               <Navigation
-
+                username={this.state.username}
               />
             )}
           />
