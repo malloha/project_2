@@ -5,7 +5,6 @@ class PhyscialActivity extends Component {
     super(props)
     this.state = {
       steps: 0,
-      distance: 0,
       activities: [],
       activityLogged: false,
       activity: {}
@@ -39,20 +38,27 @@ class PhyscialActivity extends Component {
   render() {
     return (
       <div className="physical-activity wrapper">
+
         <h1> Physical Activity Tracker</h1>
-        <form onSubmit={this.handleSubmit} className="form">
-          <input type="number" name="steps" onChange={this.handleChange} placeholder="Enter Steps" />
-          {/* <input type="number" name="distance" onChange={this.handleChange} placeholder="Distance Walked" /> */}
-          <input type="submit" value="Add Physical Activity" className="button" />
-        </form>
-        {this.state.activityLogged &&
-          this.state.activities.map((activity, key) =>
-            <div className="entry" key={key}>
-              <p>Steps: <span>{activity.steps}</span></p>
-              <p>Distance Walked: <span>{activity.steps / 2000} miles</span></p>
-            </div>)
-        }
-      </div>
+        <div className="tracker">
+          <h2>#StepsGoals</h2>
+          <form onSubmit={this.handleSubmit} className="form">
+            <input type="number" name="steps" onChange={this.handleChange} placeholder="Enter Steps" />
+            {/* <input type="number" name="distance" onChange={this.handleChange} placeholder="Distance Walked" /> */}
+            <input type="submit" value="Add Physical Activity" className="button" />
+          </form>
+          {this.state.activityLogged &&
+            this.state.activities.map((activity, key) =>
+              <div className="entry" key={key}>
+                <p>Steps: <span>{activity.steps}</span></p>
+                <p>Distance Walked: <span>{activity.steps / 2000} miles</span></p>
+              </div>)
+          }
+
+
+        </div>
+      </div >
+
     )
   }
 }

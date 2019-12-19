@@ -108,10 +108,9 @@ class App extends Component {
           />
           <Route
             path="/calorie"
-            render={() => (
-              <CalorieIntake />
-            )}
-          />
+            render={(e) => (< CalorieIntake />
+          )}
+        />
           <Route
             exact path="/"
             render={() => (
