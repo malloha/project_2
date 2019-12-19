@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FaSearch } from "react-icons/fa";
 import axios from 'axios'
+import Confetti from 'react-confetti'
 
 
 class CalorieIntake extends Component {
@@ -10,7 +11,10 @@ class CalorieIntake extends Component {
       input: '',
       totalCalories: 0,
       apiDataLoaded: false,
-      foods: []
+      foods: [],
+      goal: 1000,
+      goalLogged: false
+
     }
   }
   handleSubmit = (input) => {
@@ -47,10 +51,38 @@ class CalorieIntake extends Component {
       input: e.target.value
     })
   }
+  handlegoal = (e) => {
+
+    this.setState({
+      goal: e.target.value
+    })
+
+  }
+  submitGoal = (e) => {
+    this.setState({
+
+      goalLogged: true
+
+    })
+  }
   render() {
     return (
       <div className="calorie-intake wrapper">
         <h1>Calorie Intake Log</h1>
+        {this.state.goal <= this.state.totalCalories ? <h2>Congratulations! Today's Goal Achieved!</h2> : console.log()}
+
+        <div>
+
+          <h2>#CaloriesGoals</h2>
+
+          {!this.state.goalLogged &&
+            <div>
+              <input type="number" name="goal" onChange={this.handlegoal}></input>
+              <button className="button" onClick={this.submitGoal}> Set Goals</button>
+            </div>
+          }
+          {this.state.goalLogged && <p>Today's Goal : {this.state.goal} steps</p>}
+        </div>
         <div className="search-container">
           <form
             onSubmit={(e) => {
@@ -86,6 +118,24 @@ class CalorieIntake extends Component {
             </div>
           }
         </div>
+        {this.state.goal <= this.state.totalCalories ?
+
+          <Confetti
+            drawShape={ctx => {
+              ctx.beginPath()
+              for (let i = 0; i < 22; i++) {
+                const angle = 0.35 * i
+                const x = (0.2 + (1.5 * angle)) * Math.cos(angle)
+                const y = (0.2 + (1.5 * angle)) * Math.sin(angle)
+                ctx.lineTo(x, y)
+              }
+              ctx.stroke()
+              ctx.closePath()
+            }}
+          />
+
+          : console.log('hi')
+        }
       </div >
     )
   }
