@@ -8,7 +8,6 @@ body,html {
 .loginForm{
   border: 1px solid #2CCCC3;
   background: rgb(86, 38, 196,.2);
-  box-shadow: 0px 0px 120px 10px #0ff;
   box-shadow: 0px 0px 220px 20px #5626C4;
   
 display: flex;
@@ -223,7 +222,7 @@ input{
 }
 
 .button{
-  background-color: #5626C4;
+  background-color: #FACD3D;
   color: white;
   padding: 2% 5%;
   font-size: 0.8em;

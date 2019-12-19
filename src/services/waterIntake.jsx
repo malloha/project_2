@@ -29,22 +29,24 @@ class WaterIntake extends Component {
     return (
       <div className="water-intake wrapper">
         <h1> Water Intake Log</h1>
-        <p className="entry">Number of glasses :{this.state.water}</p>
-        <FaPlusCircle
-          className="font-awesome-icon"
-          onClick={e => {
-            e.preventDefault();
-            this.addGlasses();
-          }}
-        />
-        <h3>Add glasses of water</h3>
-        <FaMinusCircle
-          className="font-awesome-icon"
-          onClick={e => {
-            e.preventDefault();
-            this.subtractGlasses();
-          }}
-        />
+        <div>
+          <p className="entry">Number of glasses :{this.state.water}</p>
+          <FaPlusCircle
+            className="font-awesome-icon"
+            onClick={e => {
+              e.preventDefault();
+              this.addGlasses();
+            }}
+          />
+          <h3>Add glasses of water</h3>
+          <FaMinusCircle
+            className="font-awesome-icon"
+            onClick={e => {
+              e.preventDefault();
+              this.subtractGlasses();
+            }}
+          />
+        </div>
       </div >
     )
   }
