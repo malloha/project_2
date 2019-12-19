@@ -7,7 +7,9 @@ class PhyscialActivity extends Component {
       steps: 0,
       activities: [],
       activityLogged: false,
-      activity: {}
+      activity: {},
+      goalLogged: false,
+      goal: 0
     }
   }
   handleChange = (e) => {
@@ -22,6 +24,22 @@ class PhyscialActivity extends Component {
     }))
 
   }
+
+  handlegoal = (e) => {
+
+    this.setState({
+      goal: e.target.value
+    })
+
+  }
+  submitGoal = (e) => {
+    this.setState({
+
+      goalLogged: true
+
+    })
+  }
+
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -40,22 +58,30 @@ class PhyscialActivity extends Component {
       <div className="physical-activity wrapper">
 
         <h1> Physical Activity Tracker</h1>
-        <div className="tracker">
-          <h2>#StepsGoals</h2>
+        <div className="steps">
+          <div>
+            <h2>#StepsGoals</h2>
+            {!this.state.goalLogged &&
+              <div>
+                <input type="number" name="goal" onChange={this.handlegoal}></input>
+                <button className="button" onClick={this.submitGoal}> Set Goals</button>
+
+              </div>
+            }
+            {this.state.goalLogged && <p>Today's Goal:{this.state.goal} steps</p>}
+          </div>
           <form onSubmit={this.handleSubmit} className="form">
             <input type="number" name="steps" onChange={this.handleChange} placeholder="Enter Steps" />
             {/* <input type="number" name="distance" onChange={this.handleChange} placeholder="Distance Walked" /> */}
             <input type="submit" value="Add Physical Activity" className="button" />
+            {this.state.activityLogged &&
+              this.state.activities.map((activity, key) =>
+                <div className="entry" key={key}>
+                  <p>Steps: <span>{activity.steps}</span></p>
+                  <p>Distance Walked: <span>{activity.steps / 2000} miles</span></p>
+                </div>)
+            }
           </form>
-          {this.state.activityLogged &&
-            this.state.activities.map((activity, key) =>
-              <div className="entry" key={key}>
-                <p>Steps: <span>{activity.steps}</span></p>
-                <p>Distance Walked: <span>{activity.steps / 2000} miles</span></p>
-              </div>)
-          }
-
-
         </div>
       </div >
 
