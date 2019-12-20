@@ -36,6 +36,11 @@ span2{
 span3{
   color: #E60576
 }
+
+span4{
+  color: #5626C4;
+}
+
 .App {
   position: absolute;
   padding-top: 10vh;

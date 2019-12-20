@@ -61,7 +61,7 @@ class TrackWeight extends Component {
         <div>
           {this.state.goalLogged && this.state.weightLogged &&
             this.state.goal == this.state.weightArray[this.state.weightArray.length - 1].weight ? <h2>Congratulations! You achieved your Goal Weight!</h2> : console.log()}
-          <h2>#WeightGoals</h2>
+          <span3><h2>#WeightGoals</h2></span3>
 
           {!this.state.goalLogged &&
             <div>
@@ -69,7 +69,7 @@ class TrackWeight extends Component {
               <button className="track-button" onClick={this.submitGoal}> Set Goals</button>
             </div>
           }
-          {this.state.goalLogged && <p>Your Goal Weight : {this.state.goal} lbs</p>}
+          {this.state.goalLogged && <span4><h2>Your Goal Weight : {this.state.goal} lbs</h2></span4>}
         </div>
 
 
@@ -80,31 +80,33 @@ class TrackWeight extends Component {
           <input type="date" name="date" onChange={this.handleChange} placeholder="Date" />
           <input type="submit" value="Log weight" className="button" />
         </form>
-        {this.state.weightLogged &&
+        {
+          this.state.weightLogged &&
           this.state.weightArray.map((entry, key) =>
             <div className="entry" key={key}>
               <p>Weight: <span>{entry.weight} lbs</span></p>
               <p>Date: <span>{entry.date}</span></p>
             </div>)
         }
-        {this.state.goalLogged && this.state.weightLogged &&
-          this.state.goal == this.state.weightArray[this.state.weightArray.length - 1].weight
-          ?
-          // console.log(this.state.weightArray[this.state.weightArray.length - 1].weight, 'working')
-          < Confetti
-            drawShape={ctx => {
-              ctx.beginPath()
-              for (let i = 0; i < 22; i++) {
-                const angle = 0.35 * i
-                const x = (0.2 + (1.5 * angle)) * Math.cos(angle)
-                const y = (0.2 + (1.5 * angle)) * Math.sin(angle)
-                ctx.lineTo(x, y)
-              }
-              ctx.stroke()
-              ctx.closePath()
-            }}
-          />
-          : console.log('')
+        {
+          this.state.goalLogged && this.state.weightLogged &&
+            this.state.goal == this.state.weightArray[this.state.weightArray.length - 1].weight
+            ?
+            // console.log(this.state.weightArray[this.state.weightArray.length - 1].weight, 'working')
+            < Confetti
+              drawShape={ctx => {
+                ctx.beginPath()
+                for (let i = 0; i < 22; i++) {
+                  const angle = 0.35 * i
+                  const x = (0.2 + (1.5 * angle)) * Math.cos(angle)
+                  const y = (0.2 + (1.5 * angle)) * Math.sin(angle)
+                  ctx.lineTo(x, y)
+                }
+                ctx.stroke()
+                ctx.closePath()
+              }}
+            />
+            : console.log('')
         }
 
       </div >

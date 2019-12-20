@@ -73,7 +73,7 @@ class CalorieIntake extends Component {
 
         <div>
 
-          <h2>#CaloriesGoals</h2>
+          <span1><h2>#CaloriesGoals</h2></span1>
 
           {!this.state.goalLogged &&
             <div>
@@ -81,7 +81,7 @@ class CalorieIntake extends Component {
               <button className="button" onClick={this.submitGoal}> Set Goals</button>
             </div>
           }
-          {this.state.goalLogged && <p>Today's Goal : {this.state.goal} kcals</p>}
+          {this.state.goalLogged && <span2><p>Today's Goal : {this.state.goal} kcals</p></span2>}
         </div>
         <div className="search-container">
           <form

@@ -71,14 +71,14 @@ class PhyscialActivity extends Component {
         <div className="steps">
           <div>
 
-            <h3>#StepsGoals</h3>
+            <span1><h3>#StepsGoals</h3></span1>
             {!this.state.goalLogged &&
               <div className="steps">
                 <input type="number" name="goal" onChange={this.handlegoal} placeholder="Enter Steps Goal" ></input>
                 <button className="button" onClick={this.submitGoal}> Set Goals</button>
               </div>
             }
-            {this.state.goalLogged && <p>Today's Goal : {this.state.goal} steps</p>}
+            {this.state.goalLogged && <span2><p>Today's Goal : {this.state.goal} steps</p></span2>}
           </div>
           <form onSubmit={this.handleSubmit} className="form">
             <input type="number" name="steps" onChange={this.handleChange} placeholder="Enter Daily Steps" />

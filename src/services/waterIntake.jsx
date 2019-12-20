@@ -50,7 +50,7 @@ class WaterIntake extends Component {
 
         <div>
           {this.state.goalLogged && this.state.goal <= this.state.water ? <h2>Congratulations! Today's Goal Achieved!</h2> : console.log()}
-          <h2>#WaterIntakeGoals</h2>
+          <span4> <h2>#WaterIntakeGoals</h2></span4>
 
           {!this.state.goalLogged &&
             <div>
