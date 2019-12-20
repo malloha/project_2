@@ -18,6 +18,7 @@ width: 50vw;
 .loginPage{
   display: flex;
 align-items: center;
+width: 60vw;
 }
 .font-awesome-icon{
   color: #5626C4;

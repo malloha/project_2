@@ -29,12 +29,7 @@ class TrackWeight extends Component {
 
 
     }))
-    // if (e.target.name === "weight") {
-    //   this.setState({
-    //     currentWeight: e.target.value
-    //   })
-    // }
-    // console.log(this.state)
+
   }
 
   handleSubmit = (e) => {
@@ -81,7 +76,7 @@ class TrackWeight extends Component {
               <button className="track-button" onClick={this.submitGoal}> Set Goals</button>
             </div>
           }
-          {this.state.goalLogged && <p>Today's Goal : {this.state.goal} glasses of water</p>}
+          {this.state.goalLogged && <p>Today's Weight : {this.state.goal} lbs</p>}
         </div>
 
 
