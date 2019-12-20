@@ -25,9 +25,6 @@ class TrackWeight extends Component {
         ...prevState.weightHistory,
         [name]: value
       },
-
-
-
     }))
 
   }
@@ -39,10 +36,9 @@ class TrackWeight extends Component {
     this.setState(prevState => ({
       weightArray: [...prevState.weightArray, w],
       weightLogged: true
-
     }))
 
-    console.log(this.state.weightArray)
+
   }
   handlegoal = (e) => {
 
@@ -53,10 +49,7 @@ class TrackWeight extends Component {
   }
   submitGoal = (e) => {
     this.setState({
-
       goalLogged: true
-
-
     })
   }
 
@@ -111,7 +104,7 @@ class TrackWeight extends Component {
               ctx.closePath()
             }}
           />
-          : console.log('hi')
+          : console.log('')
         }
 
       </div >
