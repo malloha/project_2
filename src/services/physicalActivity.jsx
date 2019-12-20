@@ -66,23 +66,22 @@ class PhyscialActivity extends Component {
     return (
       <div className="physical-activity wrapper">
 
-        <h1> Physical Activity Tracker</h1>
+        <h2> Physical Activity Tracker</h2>
         {this.state.goal <= this.state.totalSteps ? <h2>Congratulations! Today's Goal Achieved!</h2> : console.log()}
         <div className="steps">
           <div>
 
-            <h2>#StepsGoals</h2>
-
+            <h3>#StepsGoals</h3>
             {!this.state.goalLogged &&
               <div>
-                <input type="number" name="goal" onChange={this.handlegoal}></input>
+                <input type="number" name="goal" onChange={this.handlegoal} placeholder="Enter Steps Goal" ></input>
                 <button className="button" onClick={this.submitGoal}> Set Goals</button>
               </div>
             }
             {this.state.goalLogged && <p>Today's Goal : {this.state.goal} steps</p>}
           </div>
           <form onSubmit={this.handleSubmit} className="form">
-            <input type="number" name="steps" onChange={this.handleChange} placeholder="Enter Steps" />
+            <input type="number" name="steps" onChange={this.handleChange} placeholder="Enter Daily Steps" />
             <input type="submit" value="Add Physical Activity" className="button" />
             {this.state.activityLogged &&
 

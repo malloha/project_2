@@ -54,11 +54,11 @@ class WaterIntake extends Component {
 
           {!this.state.goalLogged &&
             <div>
-              <input type="number" name="goal" onChange={this.handlegoal}></input>
-              <button className="track-button" onClick={this.submitGoal}> Set Goals</button>
+              <input type="number" name="goal" onChange={this.handlegoal} placeholder="Enter glasses of water"></input>
+              <button className="button" onClick={this.submitGoal}> Set Goals</button>
             </div>
           }
-          {this.state.goalLogged && <p>Today's Goal : {this.state.goal} glasses of water</p>}
+          {this.state.goalLogged && <p><span3>Today's Goal : {this.state.goal} glasses of water</span3></p>}
         </div>
 
         <div>

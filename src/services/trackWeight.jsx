@@ -8,7 +8,7 @@ class TrackWeight extends Component {
       weightHistory: [],
       weightArray: [],
       weightLogged: false,
-      goal: 1000,
+      goal: 10,
       goalLogged: false,
       currentWeight: 1000
 
@@ -72,8 +72,8 @@ class TrackWeight extends Component {
 
         <div>
           {this.state.goalLogged && this.state.weightLogged &&
-            this.state.goal <= this.state.weightArray[this.state.weightArray.length - 1].weight ? <h2>Congratulations! Today's Goal Achieved!</h2> : console.log()}
-          <h2>#WaterIntakeGoals</h2>
+            this.state.goal >= this.state.weightArray[this.state.weightArray.length - 1].weight ? <h2>Congratulations! You achieved your Goal Weight!</h2> : console.log()}
+          <h2>#WeightGoals</h2>
 
           {!this.state.goalLogged &&
             <div>
@@ -100,7 +100,7 @@ class TrackWeight extends Component {
             </div>)
         }
         {this.state.goalLogged && this.state.weightLogged &&
-          this.state.goal <= this.state.weightArray[this.state.weightArray.length - 1].weight
+          this.state.goal >= this.state.weightArray[this.state.weightArray.length - 1].weight
           ?
           // console.log(this.state.weightArray[this.state.weightArray.length - 1].weight, 'working')
           < Confetti

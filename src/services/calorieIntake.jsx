@@ -12,7 +12,7 @@ class CalorieIntake extends Component {
       totalCalories: 0,
       apiDataLoaded: false,
       foods: [],
-      goal: 1000,
+      goal: -1,
       goalLogged: false
 
     }
@@ -69,7 +69,7 @@ class CalorieIntake extends Component {
     return (
       <div className="calorie-intake wrapper">
         <h1>Calorie Intake Log</h1>
-        {this.state.goal <= this.state.totalCalories ? <h2>Congratulations! Today's Goal Achieved!</h2> : console.log()}
+        {this.state.goalLogged && this.state.goal <= this.state.totalCalories ? <h2>Congratulations! Today's Goal Achieved!</h2> : console.log()}
 
         <div>
 
@@ -77,11 +77,11 @@ class CalorieIntake extends Component {
 
           {!this.state.goalLogged &&
             <div>
-              <input type="number" name="goal" onChange={this.handlegoal}></input>
+              <input type="number" name="goal" onChange={this.handlegoal} placeholder="Enter Calories Goal"></input>
               <button className="button" onClick={this.submitGoal}> Set Goals</button>
             </div>
           }
-          {this.state.goalLogged && <p>Today's Goal : {this.state.goal} steps</p>}
+          {this.state.goalLogged && <p>Today's Goal : {this.state.goal} kcals</p>}
         </div>
         <div className="search-container">
           <form
@@ -118,7 +118,7 @@ class CalorieIntake extends Component {
             </div>
           }
         </div>
-        {this.state.goal <= this.state.totalCalories ?
+        {this.state.goalLogged && this.state.goal <= this.state.totalCalories ?
 
           <Confetti
             drawShape={ctx => {
