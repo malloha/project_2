@@ -73,7 +73,7 @@ class PhyscialActivity extends Component {
 
             <h3>#StepsGoals</h3>
             {!this.state.goalLogged &&
-              <div>
+              <div className="steps">
                 <input type="number" name="goal" onChange={this.handlegoal} placeholder="Enter Steps Goal" ></input>
                 <button className="button" onClick={this.submitGoal}> Set Goals</button>
               </div>

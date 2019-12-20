@@ -76,7 +76,7 @@ class TrackWeight extends Component {
               <button className="track-button" onClick={this.submitGoal}> Set Goals</button>
             </div>
           }
-          {this.state.goalLogged && <p>Today's Weight : {this.state.goal} lbs</p>}
+          {this.state.goalLogged && <p>Your Goal Weight : {this.state.goal} lbs</p>}
         </div>
 
 

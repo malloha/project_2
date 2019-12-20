@@ -20,6 +20,9 @@ width: 50vw;
 align-items: center;
 width: 60vw;
 }
+p{
+  font-size: 1.5rem;
+}
 .font-awesome-icon{
   color: #5626C4;
 }
@@ -135,6 +138,9 @@ h1:hover {
  }
 
  @media only screen and (max-width: 770px){
+  p{
+    font-size: 0.5rem;
+  }
   .links{
     flex-wrap: wrap;
     align-content: flex-start;
@@ -147,7 +153,7 @@ h1:hover {
   margin: 5px;
 }
 
- }
+}
  a:hover{
    color: black;
   
@@ -271,7 +277,7 @@ top: 5vh;
 .entry{
   border: 1px solid white;
   width: 50vw;
-  margin: 5vw;
+  margin: 0.5vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -291,6 +297,4 @@ span{
    display: flex;
    flex-direction: column;
  }
-   p{
-     font-size: 1.5rem;
-   }
+ 
