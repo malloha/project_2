@@ -15,10 +15,10 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: '',
-      password: '',
+      username: 'maleeha',
+      password: '123',
 
-      isLoggedOut: true,
+      isLoggedOut: false,
       user: {
         username: 'maleeha',
         password: '123',
@@ -41,7 +41,7 @@ class App extends Component {
         isLoggedOut: false
       })
       console.log('this is the onsubmit', this.state)
-      this.props.history.push('/home')
+      this.props.history.push('/')
     }
     else {
       this.setState({
@@ -68,7 +68,7 @@ class App extends Component {
 
     })
     console.log('heres')
-    this.props.history.push('/')
+    this.props.history.push('/login')
   }
 
   render() {
@@ -81,7 +81,7 @@ class App extends Component {
 
           <Route
             exact
-            path="/home"
+            path="/"
             render={() => (
               <Navigation
                 username={this.state.username}
@@ -109,10 +109,10 @@ class App extends Component {
           <Route
             path="/calorie"
             render={(e) => (< CalorieIntake />
-          )}
-        />
+            )}
+          />
           <Route
-            exact path="/"
+            exact path="/login"
             render={() => (
               <Login onSubmit={this.onSubmit}
                 onChange={this.onChange}
